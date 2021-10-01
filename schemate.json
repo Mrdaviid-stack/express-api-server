@@ -1,0 +1,8 @@
+{
+  "knexPath": "core/database/connection.js",
+  "modules": {
+    "users": {
+      "migrationsDir": "modules/users/migrations"
+    }
+  }
+}
