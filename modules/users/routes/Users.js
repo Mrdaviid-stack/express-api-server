@@ -55,7 +55,7 @@ router.post('/', async (request, response) => {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 router.post('/login', async (request, response) => {
-
+  
   const { identity, password } = request.body
   if (!identity || !password)
     return response.status(400).send({ msg: 'Invalid credentials'})
