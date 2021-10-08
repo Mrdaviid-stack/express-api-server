@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node -r esm -r dotenv/config .",
-    "dev": "nodemon ."
+    "start": "node -r esm -r dotenv/config index.js",
+    "dev": "nodemon -r esm index.js"
   },
   "author": "Mark David Bogayan <mrkdvdbgyn@gmail.com>",
   "dependencies": {
@@ -27,7 +27,7 @@
     "ignore": [
       "node_modules/*"
     ],
-    "exec": "npm start",
+    
     "ext": "js"
   }
 }

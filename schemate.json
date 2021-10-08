@@ -3,6 +3,9 @@
   "modules": {
     "users": {
       "migrationsDir": "modules/users/migrations"
+    },
+    "projects": {
+      "migrationsDir": "modules/projects/migrations"
     }
   }
 }

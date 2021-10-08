@@ -111,24 +111,23 @@ export class BaseModel {
   }
 
   /**
-   * Edit record
-   * 
-   * @param {number} id Id of the record to update
-   * @param {{}} data New data to set to the record
+   * Edits a record.
+   *
+   * @param {number} id ID of the record to update.
+   * @param {{}} data New data to set to the record.
    */
-  async update(id, data) {
+   async update(id, data) {
 
-    const query = (BaseModel.transaction ? BaseModel.transaction(this.table) : this.query())
-      .where({ [this.primaryKey]: id })
-      .update(data)
-      .returning('*')
-
-    this.lastQuery = query.toQuery()
-
-    return query
-      .then(([ result ]) => result || 0)
-
-  }
+     const query = (BaseModel.transaction ? BaseModel.transaction(this.table) : this.query())
+       .where({ [this.primaryKey]: id })
+       .update(data)
+       .returning('*');
+ 
+     this.lastQuery = query.toQuery();
+ 
+     return query
+       .then(([ result ]) => result || 0);
+   }
 
   /**
    * Deletes a record
@@ -138,7 +137,7 @@ export class BaseModel {
   delete(id) {
 
     const query = (BaseModel.transaction ? BaseModel.transaction(this.table) : this.query())
-      .where({ [this.idColumn]: id })
+      .where({ [this.primaryKey]: id })
       .delete()
 
     this.lastQuery = query.toQuery()
